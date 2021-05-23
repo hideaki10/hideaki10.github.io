@@ -21,23 +21,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;hideaki10.github.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;valine&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
-<meta property="og:type" content="website">
-<meta property="og:title">
-<meta property="og:url" content="https://hideaki10.github.io/archives/index.html">
+<meta name="description" content="1 構成図23 手順1. vpcの作成2. サブネット作成3. EC2作成4. Internet Gateway作成5. ルートテーブル設定6. 別のAZでサブネット作成7. RDS作成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="aws ハンズオン1のまとめ">
+<meta property="og:url" content="https://hideaki10.github.io/2021/05/05/aws-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B31%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/index.html">
 <meta property="og:site_name">
+<meta property="og:description" content="1 構成図23 手順1. vpcの作成2. サブネット作成3. EC2作成4. Internet Gateway作成5. ルートテーブル設定6. 別のAZでサブネット作成7. RDS作成">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-05T08:01:00.000Z">
+<meta property="article:modified_time" content="2021-05-23T02:40:49.983Z">
 <meta property="article:author" content="Potesen">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://hideaki10.github.io/archives/">
+<link rel="canonical" href="https://hideaki10.github.io/2021/05/05/aws-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B31%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:false,&quot;lang&quot;:&quot;en&quot;,&quot;comments&quot;:&quot;&quot;,&quot;permalink&quot;:&quot;&quot;,&quot;path&quot;:&quot;archives&#x2F;index.html&quot;,&quot;title&quot;:&quot;&quot;}</script>
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;en&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;hideaki10.github.io&#x2F;2021&#x2F;05&#x2F;05&#x2F;aws-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B31%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;05&#x2F;05&#x2F;aws-ハンズオン1のまとめ&#x2F;&quot;,&quot;title&quot;:&quot;aws ハンズオン1のまとめ&quot;}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
-<title>Archive | </title><script src="/js/config.js"></script>
+<title>aws ハンズオン1のまとめ | </title><script src="/js/config.js"></script>
   
 
 
@@ -130,7 +134,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -143,6 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%A7%8B%E6%88%90%E5%9B%B3"><span class="nav-number">1.</span> <span class="nav-text">1 構成図</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%89%8B%E9%A0%86"><span class="nav-number">3.</span> <span class="nav-text">3 手順</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-vpc%E3%81%AE%E4%BD%9C%E6%88%90"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. vpcの作成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E3%82%B5%E3%83%96%E3%83%8D%E3%83%83%E3%83%88%E4%BD%9C%E6%88%90"><span class="nav-number">3.0.2.</span> <span class="nav-text">2. サブネット作成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-EC2%E4%BD%9C%E6%88%90"><span class="nav-number">3.0.3.</span> <span class="nav-text">3. EC2作成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Internet-Gateway%E4%BD%9C%E6%88%90"><span class="nav-number">3.0.4.</span> <span class="nav-text">4. Internet Gateway作成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E3%83%AB%E3%83%BC%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E8%A8%AD%E5%AE%9A"><span class="nav-number">3.0.5.</span> <span class="nav-text">5. ルートテーブル設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%88%A5%E3%81%AEAZ%E3%81%A7%E3%82%B5%E3%83%96%E3%83%8D%E3%83%83%E3%83%88%E4%BD%9C%E6%88%90"><span class="nav-number">3.0.6.</span> <span class="nav-text">6. 別のAZでサブネット作成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-RDS%E4%BD%9C%E6%88%90"><span class="nav-number">3.0.7.</span> <span class="nav-text">7. RDS作成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E8%A8%AD%E5%AE%9A%E5%A4%89%E6%9B%B4"><span class="nav-number">3.0.8.</span> <span class="nav-text">8. セキュリティーグループの設定変更</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-EC2%E3%81%AB%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%97%E3%81%A6%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB"><span class="nav-number">3.0.9.</span> <span class="nav-text">9. EC2にログインしてパッケージをインストール</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,232 +206,109 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 11 posts in total. Keep on posting.</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://hideaki10.github.io/2021/05/05/aws-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B31%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/haomingvince/ghcdn/avatar.jpg">
+      <meta itemprop="name" content="Potesen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          aws ハンズオン1のまとめ
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-05-05 17:01:00" itemprop="dateCreated datePublished" datetime="2021-05-05T17:01:00+09:00">2021-05-05</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-23 11:40:49" itemprop="dateModified" datetime="2021-05-23T11:40:49+09:00">2021-05-23</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="1-構成図"><a href="#1-構成図" class="headerlink" title="1 構成図"></a>1 構成図</h1><h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><h1 id="3-手順"><a href="#3-手順" class="headerlink" title="3 手順"></a>3 手順</h1><h3 id="1-vpcの作成"><a href="#1-vpcの作成" class="headerlink" title="1. vpcの作成"></a>1. vpcの作成</h3><h3 id="2-サブネット作成"><a href="#2-サブネット作成" class="headerlink" title="2. サブネット作成"></a>2. サブネット作成</h3><h3 id="3-EC2作成"><a href="#3-EC2作成" class="headerlink" title="3. EC2作成"></a>3. EC2作成</h3><h3 id="4-Internet-Gateway作成"><a href="#4-Internet-Gateway作成" class="headerlink" title="4. Internet Gateway作成"></a>4. Internet Gateway作成</h3><h3 id="5-ルートテーブル設定"><a href="#5-ルートテーブル設定" class="headerlink" title="5. ルートテーブル設定"></a>5. ルートテーブル設定</h3><h3 id="6-別のAZでサブネット作成"><a href="#6-別のAZでサブネット作成" class="headerlink" title="6. 別のAZでサブネット作成"></a>6. 別のAZでサブネット作成</h3><h3 id="7-RDS作成"><a href="#7-RDS作成" class="headerlink" title="7. RDS作成"></a>7. RDS作成</h3><h3 id="8-セキュリティーグループの設定変更"><a href="#8-セキュリティーグループの設定変更" class="headerlink" title="8. セキュリティーグループの設定変更"></a>8. セキュリティーグループの設定変更</h3><h3 id="9-EC2にログインしてパッケージをインストール"><a href="#9-EC2にログインしてパッケージをインストール" class="headerlink" title="9. EC2にログインしてパッケージをインストール"></a>9. EC2にログインしてパッケージをインストール</h3>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-23T15:35:35+09:00"
-              content="2021-05-23">
-          05-23
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/23/aws-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B33%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/" itemprop="url">
-            <span itemprop="name">aws-ハンズオン3のまとめ</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          
 
-      
-    </header>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Potesen
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://hideaki10.github.io/2021/05/05/aws-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B31%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/" title="aws ハンズオン1のまとめ">https://hideaki10.github.io/2021/05/05/aws-ハンズオン1のまとめ/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/10/swift-%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/" rel="prev" title="swift のまとめ">
+                  <i class="fa fa-chevron-left"></i> swift のまとめ
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/05/10/aws-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B32%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/" rel="next" title="aws-ハンズオン2のまとめ">
+                  aws-ハンズオン2のまとめ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-23T11:40:49+09:00"
-              content="2021-05-23">
-          05-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/23/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-14T11:43:34+09:00"
-              content="2021-05-14">
-          05-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/14/flutter-Navigator-2-0/" itemprop="url">
-            <span itemprop="name">flutter Navigator 2.0</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-10T15:35:35+09:00"
-              content="2021-05-10">
-          05-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/10/aws-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B32%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/" itemprop="url">
-            <span itemprop="name">aws-ハンズオン2のまとめ</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-05-05T17:01:00+09:00"
-              content="2021-05-05">
-          05-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/05/aws-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B31%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/" itemprop="url">
-            <span itemprop="name">aws ハンズオン1のまとめ</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-03-10T16:42:44+09:00"
-              content="2021-03-10">
-          03-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/03/10/swift-%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/" itemprop="url">
-            <span itemprop="name">swift のまとめ</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-14T23:02:09+09:00"
-              content="2021-02-14">
-          02-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/14/riverpod%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/" itemprop="url">
-            <span itemprop="name">riverpodのまとめ</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-13T00:03:09+09:00"
-              content="2021-02-13">
-          02-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/12/hexo-command/" itemprop="url">
-            <span itemprop="name">hexo command</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-02T22:58:31+09:00"
-              content="2021-02-02">
-          02-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/02/markdon-cheat/" itemprop="url">
-            <span itemprop="name">markdon-cheat</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-02T22:48:39+09:00"
-              content="2021-02-02">
-          02-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/02/DDD%E9%A7%86%E5%8B%95%E8%A8%AD%E8%A8%88/" itemprop="url">
-            <span itemprop="name">DDD駆動設計</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+
+
+
 <script src="/js/comments.js"></script>
 </div>
   </main>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/haomingvince/ghcdn/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/haomingvince/ghcdn/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/haomingvince/ghcdn/avatar.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;hideaki10.github.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;valine&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
+<meta name="description" content="Block ElementsHeaders 見出し先頭に#をレベルの数だけ記述します。 123456# 見出し1## 見出し2### 見出し3#### 見出し4##### 見出し5###### 見出し6  見出し1見出し2見出し3見出し4見出し5見出し6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdon-cheat">
+<meta property="og:url" content="https://hideaki10.github.io/2021/02/02/markdon-cheat/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="Block ElementsHeaders 見出し先頭に#をレベルの数だけ記述します。 123456# 見出し1## 見出し2### 見出し3#### 見出し4##### 見出し5###### 見出し6  見出し1見出し2見出し3見出し4見出し5見出し6">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-02T13:58:31.000Z">
+<meta property="article:modified_time" content="2021-05-23T02:40:49.983Z">
+<meta property="article:author" content="Potesen">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hideaki10.github.io/2021/02/02/markdon-cheat/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;en&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;hideaki10.github.io&#x2F;2021&#x2F;02&#x2F;02&#x2F;markdon-cheat&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;02&#x2F;02&#x2F;markdon-cheat&#x2F;&quot;,&quot;title&quot;:&quot;markdon-cheat&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>markdon-cheat | </title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title"></h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+        <li class="menu-item menu-item-guestbook"><a href="/guestbook/" rel="section"><i class="fa fa-book fa-fw"></i>guestbook</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Block-Elements"><span class="nav-number">1.</span> <span class="nav-text">Block Elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Headers-%E8%A6%8B%E5%87%BA%E3%81%97"><span class="nav-number">1.1.</span> <span class="nav-text">Headers 見出し</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A6%8B%E5%87%BA%E3%81%971"><span class="nav-number">2.</span> <span class="nav-text">見出し1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%8B%E5%87%BA%E3%81%972"><span class="nav-number">2.1.</span> <span class="nav-text">見出し2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%8B%E5%87%BA%E3%81%973"><span class="nav-number">2.1.1.</span> <span class="nav-text">見出し3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A6%8B%E5%87%BA%E3%81%974"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">見出し4</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A6%8B%E5%87%BA%E3%81%975"><span class="nav-number">2.1.1.1.1.</span> <span class="nav-text">見出し5</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%A6%8B%E5%87%BA%E3%81%976"><span class="nav-number">2.1.1.1.1.1.</span> <span class="nav-text">見出し6</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-%E6%AE%B5%E8%90%BD"><span class="nav-number">2.2.</span> <span class="nav-text">Block 段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Br-%E6%94%B9%E8%A1%8C"><span class="nav-number">2.3.</span> <span class="nav-text">Br 改行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blockquotes-%E5%BC%95%E7%94%A8"><span class="nav-number">2.4.</span> <span class="nav-text">Blockquotes 引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-%E3%82%B3%E3%83%BC%E3%83%89"><span class="nav-number">2.5.</span> <span class="nav-text">Code コード</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%82%A4%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89"><span class="nav-number">2.5.1.</span> <span class="nav-text">インラインコード</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pre-%E6%95%B4%E5%BD%A2%E6%B8%88%E3%81%BF%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88"><span class="nav-number">2.6.</span> <span class="nav-text">pre 整形済みテキスト</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hr-%E6%B0%B4%E5%B9%B3%E7%B7%9A"><span class="nav-number">2.7.</span> <span class="nav-text">Hr 水平線</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hoge"><span class="nav-number">2.8.</span> <span class="nav-text">hoge</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lists"><span class="nav-number">3.</span> <span class="nav-text">Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ul-%E7%AE%87%E6%9D%A1%E6%9B%B8%E3%81%8D%E3%83%AA%E3%82%B9%E3%83%88"><span class="nav-number">3.1.</span> <span class="nav-text">Ul 箇条書きリスト</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ol-%E7%95%AA%E5%8F%B7%E4%BB%98%E3%81%8D%E3%83%AA%E3%82%B9%E3%83%88"><span class="nav-number">3.2.</span> <span class="nav-text">Ol 番号付きリスト</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Span-Elements"><span class="nav-number">4.</span> <span class="nav-text">Span Elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Link-%E3%83%AA%E3%83%B3%E3%82%AF"><span class="nav-number">4.1.</span> <span class="nav-text">Link リンク</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E5%8F%82%E7%85%A7%E3%83%AA%E3%83%B3%E3%82%AF"><span class="nav-number">4.1.1.</span> <span class="nav-text">外部参照リンク</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B7%E8%AA%BF"><span class="nav-number">4.2.</span> <span class="nav-text">強調</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#em"><span class="nav-number">4.2.1.</span> <span class="nav-text">em</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strong"><span class="nav-number">4.2.2.</span> <span class="nav-text">strong</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#em-strong"><span class="nav-number">4.2.3.</span> <span class="nav-text">em + strong</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Images-%E7%94%BB%E5%83%8F"><span class="nav-number">4.3.</span> <span class="nav-text">Images 画像</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Table-%E8%A1%A8"><span class="nav-number">5.</span> <span class="nav-text">Table 表</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Potesen"
+      src="https://cdn.jsdelivr.net/gh/haomingvince/ghcdn/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Potesen</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hideaki10" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hideaki10" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:senshikou1985@gmail.com" title="E-Mail → mailto:senshikou1985@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/forelgoog" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;forelgoog" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hideaki10" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://hideaki10.github.io/2021/02/02/markdon-cheat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/haomingvince/ghcdn/avatar.jpg">
+      <meta itemprop="name" content="Potesen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          markdon-cheat
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-02-02 22:58:31" itemprop="dateCreated datePublished" datetime="2021-02-02T22:58:31+09:00">2021-02-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-05-23 11:40:49" itemprop="dateModified" datetime="2021-05-23T11:40:49+09:00">2021-05-23</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Block-Elements"><a href="#Block-Elements" class="headerlink" title="Block Elements"></a>Block Elements</h1><h2 id="Headers-見出し"><a href="#Headers-見出し" class="headerlink" title="Headers 見出し"></a>Headers 見出し</h2><p>先頭に<code>#</code>をレベルの数だけ記述します。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 見出し1</span><br><span class="line">## 見出し2</span><br><span class="line">### 見出し3</span><br><span class="line">#### 見出し4</span><br><span class="line">##### 見出し5</span><br><span class="line">###### 見出し6</span><br></pre></td></tr></table></figure>
+
+<h1 id="見出し1"><a href="#見出し1" class="headerlink" title="見出し1"></a>見出し1</h1><h2 id="見出し2"><a href="#見出し2" class="headerlink" title="見出し2"></a>見出し2</h2><h3 id="見出し3"><a href="#見出し3" class="headerlink" title="見出し3"></a>見出し3</h3><h4 id="見出し4"><a href="#見出し4" class="headerlink" title="見出し4"></a>見出し4</h4><h5 id="見出し5"><a href="#見出し5" class="headerlink" title="見出し5"></a>見出し5</h5><h6 id="見出し6"><a href="#見出し6" class="headerlink" title="見出し6"></a>見出し6</h6><h2 id="Block-段落"><a href="#Block-段落" class="headerlink" title="Block 段落"></a>Block 段落</h2><p>空白行を挟むことで段落となります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">段落1</span><br><span class="line">(空行)</span><br><span class="line">段落2</span><br></pre></td></tr></table></figure>
+
+<p>段落1</p>
+<p>段落2</p>
+<h2 id="Br-改行"><a href="#Br-改行" class="headerlink" title="Br 改行"></a>Br 改行</h2><p>改行の前に半角スペース<code>  </code>を2つ記述します。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hoge</span><br><span class="line">fuga(スペース2つ)</span><br><span class="line">piyo</span><br></pre></td></tr></table></figure>
+
+<p>hoge<br>fuga<br>piyo</p>
+<h2 id="Blockquotes-引用"><a href="#Blockquotes-引用" class="headerlink" title="Blockquotes 引用"></a>Blockquotes 引用</h2><p>先頭に<code>&gt;</code>を記述します。ネストは<code>&gt;</code>を多重に記述します。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 引用  </span><br><span class="line">&gt; 引用</span><br><span class="line">&gt;&gt; 多重引用</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>引用<br>引用</p>
+<blockquote>
+<p>多重引用</p>
+</blockquote>
+</blockquote>
+<h2 id="Code-コード"><a href="#Code-コード" class="headerlink" title="Code コード"></a>Code コード</h2><p><code>`バッククオート`</code> 3つ、あるいはダッシュ<code>~</code>３つで囲みます。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print &#x27;hoge&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print &#x27;hoge&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="インラインコード"><a href="#インラインコード" class="headerlink" title="インラインコード"></a>インラインコード</h3><p><code>`バッククオート`</code> で単語を囲むとインラインコードになります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">これは `インラインコード`です。</span><br></pre></td></tr></table></figure>
+
+<p>これは <code>インラインコード</code>です。</p>
+<h2 id="pre-整形済みテキスト"><a href="#pre-整形済みテキスト" class="headerlink" title="pre 整形済みテキスト"></a>pre 整形済みテキスト</h2><p>半角スペース4個もしくはタブで、コードブロックをpre表示できます</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Hoge</span><br><span class="line">    def hoge</span><br><span class="line">        print &#x27;hoge&#x27;</span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<pre><code>class Hoge
+    def hoge
+        print &#39;hoge&#39;
+    end
+end
+</code></pre>
+<h2 id="Hr-水平線"><a href="#Hr-水平線" class="headerlink" title="Hr 水平線"></a>Hr 水平線</h2><p>アンダースコア<code>_</code> 、アスタリスク<code>*</code>、ハイフン<code>-</code>などを3つ以上連続して記述します。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hoge</span><br><span class="line">***</span><br><span class="line">hoge</span><br><span class="line">___</span><br><span class="line">hoge</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>hoge</p>
+<hr>
+<p>hoge</p>
+<hr>
+<h2 id="hoge"><a href="#hoge" class="headerlink" title="hoge"></a>hoge</h2><h1 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h1><h2 id="Ul-箇条書きリスト"><a href="#Ul-箇条書きリスト" class="headerlink" title="Ul 箇条書きリスト"></a>Ul 箇条書きリスト</h2><p>ハイフン<code>-</code>、プラス<code>+</code>、アスタリスク<code>*</code>のいずれかを先頭に記述します。<br>ネストはタブで表現します。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- リスト1</span><br><span class="line">    - リスト1_1</span><br><span class="line">        - リスト1_1_1</span><br><span class="line">        - リスト1_1_2</span><br><span class="line">    - リスト1_2</span><br><span class="line">- リスト2</span><br><span class="line">- リスト3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>リスト1<ul>
+<li>リスト1_1<ul>
+<li>リスト1_1_1</li>
+<li>リスト1_1_2</li>
+</ul>
+</li>
+<li>リスト1_2</li>
+</ul>
+</li>
+<li>リスト2</li>
+<li>リスト3</li>
+</ul>
+<h2 id="Ol-番号付きリスト"><a href="#Ol-番号付きリスト" class="headerlink" title="Ol 番号付きリスト"></a>Ol 番号付きリスト</h2><p><code>番号.</code>を先頭に記述します。ネストはタブで表現します。<br>番号は自動的に採番されるため、すべての行を1.と記述するのがお勧めです。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 番号付きリスト1</span><br><span class="line">    1. 番号付きリスト1-1</span><br><span class="line">    1. 番号付きリスト1-2</span><br><span class="line">1. 番号付きリスト2</span><br><span class="line">1. 番号付きリスト3</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>番号付きリスト1<ol>
+<li>番号付きリスト1-1</li>
+<li>番号付きリスト1-2</li>
+</ol>
+</li>
+<li>番号付きリスト2</li>
+<li>番号付きリスト3</li>
+</ol>
+<h1 id="Span-Elements"><a href="#Span-Elements" class="headerlink" title="Span Elements"></a>Span Elements</h1><h2 id="Link-リンク"><a href="#Link-リンク" class="headerlink" title="Link リンク"></a>Link リンク</h2><p><code>[表示文字](URL)</code>でリンクに変換されます。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Google](https://www.google.co.jp/)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.google.co.jp/">Google</a></p>
+<h3 id="外部参照リンク"><a href="#外部参照リンク" class="headerlink" title="外部参照リンク"></a>外部参照リンク</h3><p>URLが長くて読みづらくなる場合や同じリンクを何度も使用する場合は、リンク先への参照を定義できます。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Googleを見る][Google]</span><br><span class="line">[Google]: http://www.yahoo.co.jp</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://www.yahoo.co.jp/">Googleを見る</a></p>
+<h2 id="強調"><a href="#強調" class="headerlink" title="強調"></a>強調</h2><h3 id="em"><a href="#em" class="headerlink" title="em"></a>em</h3><p>アスタリスク<code>*</code>もしくはアンダースコア<code>_</code>1個で文字列を囲みます。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">これは *イタリック* です</span><br><span class="line">これは _イタリック_ です</span><br></pre></td></tr></table></figure>
+
+<p>これは <em>イタリック</em> です<br>これは <em>イタリック</em> です</p>
+<h3 id="strong"><a href="#strong" class="headerlink" title="strong"></a>strong</h3><p>アスタリスク<code>*</code>もしくはアンダースコア<code>_</code>2個で文字列を囲みます。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">これは **ボールド** です</span><br><span class="line">これは __ボールド__ です</span><br></pre></td></tr></table></figure>
+
+<p>これは <strong>ボールド</strong> です<br>これは <strong>ボールド</strong> です</p>
+<h3 id="em-strong"><a href="#em-strong" class="headerlink" title="em + strong"></a>em + strong</h3><p>アスタリスク<code>*</code>もしくはアンダースコア<code>_</code>3個で文字列を囲みます。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">これは ***イタリック＆ボールド*** です</span><br><span class="line">これは ___イタリック＆ボールド___ です</span><br></pre></td></tr></table></figure>
+
+<p>これは <em><strong>イタリック＆ボールド</strong></em> です<br>これは <em><strong>イタリック＆ボールド</strong></em> です</p>
+<h2 id="Images-画像"><a href="#Images-画像" class="headerlink" title="Images 画像"></a>Images 画像</h2><p>先頭の<code>!</code>で画像の<img>と認識されます。画像の大きさなどの指定をする場合はimgタグを使用します。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![alt](画像URL)</span><br><span class="line">![代替文字列](URL &quot;タイトル&quot;)</span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;attach:cat.jpg&quot; alt=&quot;attach:cat&quot; title=&quot;attach:cat&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Table-表"><a href="#Table-表" class="headerlink" title="Table 表"></a>Table 表</h1><p><code>-</code>と<code>|</code>を使ってtableを作成します。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| TH1 | TH2 |</span><br><span class="line">----|---- </span><br><span class="line">| TD1 | TD3 |</span><br><span class="line">| TD2 | TD4 |</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>TH1</th>
+<th>TH2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TD1</td>
+<td>TD3</td>
+</tr>
+<tr>
+<td>TD2</td>
+<td>TD4</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左揃え | 中央揃え | 右揃え |</span><br><span class="line">|:---|:---:|---:|</span><br><span class="line">|1 |2 |3 |</span><br><span class="line">|4 |5 |6 |</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">左揃え</th>
+<th align="center">中央揃え</th>
+<th align="right">右揃え</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="center">2</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="center">5</td>
+<td align="right">6</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Potesen
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://hideaki10.github.io/2021/02/02/markdon-cheat/" title="markdon-cheat">https://hideaki10.github.io/2021/02/02/markdon-cheat/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/02/02/DDD%E9%A7%86%E5%8B%95%E8%A8%AD%E8%A8%88/" rel="prev" title="DDD駆動設計">
+                  <i class="fa fa-chevron-left"></i> DDD駆動設計
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/02/12/hexo-command/" rel="next" title="hexo command">
+                  hexo command <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Potesen</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
