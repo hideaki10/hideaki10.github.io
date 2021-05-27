@@ -424,13 +424,13 @@ font:
   global:
     external: true
     family: Microsoft YaHei
-    size: 15
+    size: 14
 
   # Font settings for site title (.site-title).
   title:
     external: true
     family: Microsoft YaHei
-    size: 15
+    size: 18
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
