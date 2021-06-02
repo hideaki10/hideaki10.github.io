@@ -1,7 +1,7 @@
 ---
 title: riverpodのまとめ
 date: 2021-02-14 23:02:09
-tags:
+tags: flutter
 ---
 
 

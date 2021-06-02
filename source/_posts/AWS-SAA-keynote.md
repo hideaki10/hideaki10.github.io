@@ -1,7 +1,7 @@
 ---
 title: AWS SAA keynote
 date: 2021-05-24 14:10:48
-tags:
+tags: aws
 ---
 
 ## AWS SAAのまとめ
@@ -25,7 +25,22 @@ tags:
 - VPNの連携
   - オンプレ側にカスタマイズゲートウェイ
   - AWS側に仮想プライベードゲートウェイ
-
+- エンドポイント
+  - gateway
+    - API gateway
+    - cloudwatch
+  - private link
+    - Dynamo DB
+    - S3 
+ - ENI
+   - ホットアタッチ
+     - 実行中のアタッチ
+   - ウォームアタッチ
+     - 停止中のアタッチ
+   - コールドアタッチ
+     - インスタンスが起動中のアタッチ
+ - Transit Gateway
+   - 中央ハブを介してVPCとオンプレと接続
 ### CloudTrail
 - アカウントの操作履歴
 
@@ -41,6 +56,8 @@ tags:
     - RDSインスタンスの追加ではなく容量の自動追加
  - レードレプリカ
     - リージョンごとレードレプリカ構成
+ - プロキシ
+ 　 - アプリとRDSのコネクション管理 
 
 ### DynamoDB
   ##### 処理を分散化する
@@ -58,8 +75,10 @@ tags:
 ### ALB
   - CLB
     - Connection Draining
+    - 異常発生する場合、新しいリクエストを送信せず、既存リクエスト完了
   - ALB
     - スティッキーセッション
+    - 同じリクエストを同じEC2に送信する
 
 ### QuickSight
   -  可視化ツール
@@ -67,12 +86,15 @@ tags:
 
 ### Route53
 
-##### レコード
+- レコード
   - CNAME
    - 別のドメインへの設定
   - AliAS
    - AWS内部サービス利用(cloudfront,)
-
+- マルチバリュールーティング
+  - IPアドレス単位でヘルスチェック
+- フェールオーバールーティング
+  - プライマリー、セカンダリー(IPアドレスではなく)
 ### Redshift
   - クラスタ間にトラフィック制御
    - 拡張VPCルーティング
@@ -121,6 +143,10 @@ tags:
    - 誤った削除対策
      - バージョンニング機能の有効化
      - MFA認証の有効化 
+   - イベント通知
+     - lambda
+     - SQS
+     - SNS
 ### Glacier
   - 取り出す時間
 
@@ -131,6 +157,8 @@ tags:
 ### SQS
   - 既存保存期間
     - 4日間
+  - 保存できるメッセージ数
+    - 無制限
 
 ### CloudWatch
  
@@ -140,7 +168,13 @@ tags:
   - os内の測定
 - サブスクリブション
   - Lambdaへログ連携
+- ApptraximateNumberOfMessage
+
+
 ### レアサービス
+   - SSL証明書
+     - ACM
+     - IAM(ACMに対応してないリージョン)
    - VPCピアリング
      - 異なるリージョンにVPCでもビア接続できる
    - AWS Managed VPN
@@ -168,6 +202,16 @@ tags:
      - Active DirectoryとIAMを連携する
    - SAM
      - サーバレスアプリケーションデプロイツール
+   - step functions
+     - オンプレとEC2で分散アーキテクチャーを構築する
+   -  SWF
+     - ワークフローなどプロセスが作成できる
+     - EC2サーバベースのオーケストレーション機能がない
+   - X-ray
+     - APIリクエストを追跡、分析
+   - WLM(work load management)
+     - RedshiftWLM
+     - Redshiftで実行するクエリ処理の実行順序を定義する
 
 ### 混乱しやすい物
  - リザーブド購入方式があるサービス

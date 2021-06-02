@@ -1,7 +1,7 @@
 ---
 title: hexo command
 date: 2021-02-13 00:03:09
-tags:
+tags: hexo
 ---
 
 hexo n "我的博客" == hexo new "我的博客" #新建文章

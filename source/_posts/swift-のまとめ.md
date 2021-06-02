@@ -1,8 +1,8 @@
 ---
 title: swift のまとめ
 date: 2021-03-10 16:42:44
-tags:
----
+tags: swift
+--- 
 
 
 # struct

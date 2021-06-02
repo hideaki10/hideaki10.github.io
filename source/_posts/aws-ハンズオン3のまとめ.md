@@ -1,7 +1,7 @@
 ---
 title: aws-ハンズオン3のまとめ
 date: 2021-05-23 15:35:35
-tags:
+tags: aws
 ---
 
 1. web image ami

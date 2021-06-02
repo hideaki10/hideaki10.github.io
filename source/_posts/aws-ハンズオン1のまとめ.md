@@ -1,7 +1,7 @@
 ---
 title: aws ハンズオン1のまとめ
 date: 2021-05-05 17:01:00
-tags:
+tags: aws
 ---
 
 
