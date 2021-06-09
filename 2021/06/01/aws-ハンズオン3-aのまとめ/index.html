@@ -29,7 +29,7 @@
 <meta property="og:description" content="EC2にCloudWatchのlogエージェントをインストール 12sudo yum install awslogs logsのconfを設定する 123456789101112131415161718 &#x2F;etc&#x2F;awslogs&#x2F;awscli.conf regionを変更 &#x2F;etc&#x2F;awslogs&#x2F;awslogs.conf [HttpAccessLog]file &#x3D; &#x2F;var&#x2F;log&#x2F;httpd">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-01T08:44:26.000Z">
-<meta property="article:modified_time" content="2021-06-02T15:54:32.934Z">
+<meta property="article:modified_time" content="2021-06-09T12:48:37.741Z">
 <meta property="article:author" content="Potesen">
 <meta property="article:tag" content="aws">
 <meta name="twitter:card" content="summary">
@@ -254,7 +254,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
@@ -272,6 +272,8 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install awslogs</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 <li><p>logsのconfを設定する</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> /etc/awslogs/awscli.conf</span><br><span class="line"> regionを変更</span><br><span class="line"></span><br><span class="line"> /etc/awslogs/awslogs.conf</span><br><span class="line"></span><br><span class="line"> [HttpAccessLog]</span><br><span class="line">file = /var/log/httpd/access_log</span><br><span class="line">log_group_name = HttpAccessLog</span><br><span class="line">log_stream_name = &#123;instance_id&#125;</span><br><span class="line">datetime_format = %b %d %H:%M:%S</span><br><span class="line"></span><br><span class="line">[HttpErrorLog]</span><br><span class="line">file = /var/log/httpd/error_log</span><br><span class="line">log_group_name = HttpErrorLog</span><br><span class="line">log_stream_name = &#123;instance_id&#125;</span><br><span class="line">datetime_format = %b %d %H:%M:%S</span><br><span class="line"></span><br><span class="line">設定追加</span><br></pre></td></tr></table></figure></li>
+<li><p>IAMポリシーを追加する</p>
+</li>
 </ol>
 
     </div>

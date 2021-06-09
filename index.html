@@ -248,7 +248,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
@@ -266,6 +266,8 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install awslogs</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 <li><p>logsのconfを設定する</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> /etc/awslogs/awscli.conf</span><br><span class="line"> regionを変更</span><br><span class="line"></span><br><span class="line"> /etc/awslogs/awslogs.conf</span><br><span class="line"></span><br><span class="line"> [HttpAccessLog]</span><br><span class="line">file = /var/log/httpd/access_log</span><br><span class="line">log_group_name = HttpAccessLog</span><br><span class="line">log_stream_name = &#123;instance_id&#125;</span><br><span class="line">datetime_format = %b %d %H:%M:%S</span><br><span class="line"></span><br><span class="line">[HttpErrorLog]</span><br><span class="line">file = /var/log/httpd/error_log</span><br><span class="line">log_group_name = HttpErrorLog</span><br><span class="line">log_stream_name = &#123;instance_id&#125;</span><br><span class="line">datetime_format = %b %d %H:%M:%S</span><br><span class="line"></span><br><span class="line">設定追加</span><br></pre></td></tr></table></figure></li>
+<li><p>IAMポリシーを追加する</p>
+</li>
 </ol>
 
           <!--noindex-->
@@ -332,7 +334,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
@@ -365,7 +367,42 @@
 <li>50個</li>
 </ul>
 </li>
+<li>リザーブドインスタンス<ul>
+<li>Standard RI</li>
 </ul>
+</li>
+<li>スポットインスタンス<ul>
+<li>スポットブロック<br>　 - 6時間まで連続する処理が保証される</li>
+<li>スポットフルート</li>
+</ul>
+</li>
+<li>リザーブドインスタンス<ul>
+<li>スタンダード<ul>
+<li>同じリージョン内全てAZを変更できる  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>完全なスナップショット<br>　 - EC2の停止</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">汎用SSD</th>
+<th align="center">プロビジョンドIOPS</th>
+<th align="center">スループット</th>
+<th align="center">ColdHDD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">スループット/ボリューム</td>
+<td align="center">250mib/s</td>
+<td align="center">1000 mib/s</td>
+<td align="center">500 mib/s</td>
+<td align="center">250 mib/s</td>
+</tr>
+</tbody></table>
 <h3 id="VPC"><a href="#VPC" class="headerlink" title="VPC"></a>VPC</h3><ul>
 <li>サブネット<ul>
 <li>上限200個</li>
@@ -405,9 +442,10 @@
 </ul>
 </li>
 <li>Transit Gateway<ul>
-<li>中央ハブを介してVPCとオンプレと接続<h3 id="CloudTrail"><a href="#CloudTrail" class="headerlink" title="CloudTrail"></a>CloudTrail</h3></li>
+<li>中央ハブを介してVPCとオンプレと接続</li>
 </ul>
 </li>
+<li>Egress-Only インターネットゲートウェイ<h3 id="CloudTrail"><a href="#CloudTrail" class="headerlink" title="CloudTrail"></a>CloudTrail</h3></li>
 <li>アカウントの操作履歴</li>
 </ul>
 <h3 id="RDS"><a href="#RDS" class="headerlink" title="RDS"></a>RDS</h3><ul>
@@ -436,11 +474,35 @@
 </li>
 <li>プロキシ<br>　 - アプリとRDSのコネクション管理 </li>
 </ul>
-<h3 id="DynamoDB"><a href="#DynamoDB" class="headerlink" title="DynamoDB"></a>DynamoDB</h3><h5 id="処理を分散化する"><a href="#処理を分散化する" class="headerlink" title="処理を分散化する"></a>処理を分散化する</h5><ul>
-<li>SQSとLamdbaとの連携<h5 id="デーブルの読み書き容量を制御"><a href="#デーブルの読み書き容量を制御" class="headerlink" title="デーブルの読み書き容量を制御"></a>デーブルの読み書き容量を制御</h5></li>
-<li>オンデマンド</li>
-<li>プロビジョニング済み<br>　- 読み書きの回数を指定してその必要な分の性能が確保される </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">可用性</th>
+<th align="center">スループット</th>
+<th align="center">レイテンシ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">マルチAZ</td>
+<td align="center">○</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">リードレプリカ</td>
+<td align="center">-</td>
+<td align="center">○</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">プロビジョンドIOPS</td>
+<td align="center">-</td>
+<td align="center">○</td>
+<td align="center">○</td>
+</tr>
+</tbody></table>
+<h3 id="DynamoDB"><a href="#DynamoDB" class="headerlink" title="DynamoDB"></a>DynamoDB</h3>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/05/24/AWS-SAA-keynote/#more" rel="contents">
@@ -505,7 +567,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
@@ -593,7 +655,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
@@ -672,7 +734,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
@@ -750,7 +812,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
@@ -828,7 +890,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
@@ -910,7 +972,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
@@ -994,7 +1056,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
@@ -1073,7 +1135,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-03 00:54:32" itemprop="dateModified" datetime="2021-06-03T00:54:32+09:00">2021-06-03</time>
+        <time title="Modified: 2021-06-09 21:48:37" itemprop="dateModified" datetime="2021-06-09T21:48:37+09:00">2021-06-09</time>
       </span>
 
   
