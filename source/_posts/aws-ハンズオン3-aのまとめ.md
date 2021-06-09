@@ -31,3 +31,5 @@ datetime_format = %b %d %H:%M:%S
 
 設定追加
 ```
+
+3. IAMポリシーを追加する
