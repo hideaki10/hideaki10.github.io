@@ -1,12 +1,14 @@
 ---
 title: vagrant+kubesprayでローカルにkubernetesを構築するメモ
 date: 2021-06-17 22:46:28
-tags: Kubernetes
+categories: Kubernetes
+tags: 
+- Kubernetes
 ---
 
 ```
- vi inventory/mycluster/hosts.yaml
- 以下のように修正する
+  vi inventory/mycluster/hosts.yaml
+   以下のように修正する
    master →　node1
    worker →　node2,node3
 
@@ -34,3 +36,5 @@ tags: Kubernetes
     export PATH="$PATH":"/usr/local/bin"
 
     source ~/.bash_profile
+
+```
