@@ -158,14 +158,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -217,6 +217,99 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hideaki10.github.io/2021/06/17/vagrant-kubespray%E3%81%A7%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%ABkubernetes%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/haomingvince/ghcdn/avatar.jpg">
+      <meta itemprop="name" content="Potesen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="船長の箱">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/06/17/vagrant-kubespray%E3%81%A7%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%ABkubernetes%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/" class="post-title-link" itemprop="url">vagrant+kubesprayでローカルにkubernetesを構築するメモ</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-06-17 22:46:28" itemprop="dateCreated datePublished" datetime="2021-06-17T22:46:28+09:00">2021-06-17</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>```<br> vi inventory/mycluster/hosts.yaml<br> 以下のように修正する<br>   master →　node1<br>   worker →　node2,node3</p>
+<p>  vi inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml<br>     適当にサブネットを修正<br>     kube_service_addresses　→　10.200.0.0/16　<br>     kube_pods_subnet　→　10.233.0.0/16</p>
+<pre><code> container-managerを変更
+ container_manager →　containerd
+</code></pre>
+<p>  vi ./inventory/mycluster/group_vars/etcd.yml<br>     deployのtypeを変更<br>     etcd_deployment_type →　host(二進数)</p>
+<p>  vi ./inventory/mycluster/group_vars/k8s_cluster/addons.yml</p>
+<pre><code> dashboard を変更
+  dashboard_enabled →　true 
+ ingress nginx を変更
+ ingress_nginx_enabled →　true
+</code></pre>
+<p>  ansible-playbookを実行したら,no command場合<br>    ~/.bash_profileに以下追加<br>    export PATH=”$PATH”:”/usr/local/bin”</p>
+<pre><code>source ~/.bash_profile
+</code></pre>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/17/vagrant-kubespray%E3%81%A7%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%ABkubernetes%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hideaki10.github.io/2021/06/01/aws-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B33-a%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -248,7 +341,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 23:30:49" itemprop="dateModified" datetime="2021-06-15T23:30:49+09:00">2021-06-15</time>
+        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
       </span>
 
   
@@ -334,7 +427,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 23:30:49" itemprop="dateModified" datetime="2021-06-15T23:30:49+09:00">2021-06-15</time>
+        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
       </span>
 
   
@@ -571,7 +664,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 23:30:49" itemprop="dateModified" datetime="2021-06-15T23:30:49+09:00">2021-06-15</time>
+        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
       </span>
 
   
@@ -659,7 +752,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 23:30:49" itemprop="dateModified" datetime="2021-06-15T23:30:49+09:00">2021-06-15</time>
+        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
       </span>
 
   
@@ -738,7 +831,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 23:30:49" itemprop="dateModified" datetime="2021-06-15T23:30:49+09:00">2021-06-15</time>
+        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
       </span>
 
   
@@ -816,7 +909,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 23:30:49" itemprop="dateModified" datetime="2021-06-15T23:30:49+09:00">2021-06-15</time>
+        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
       </span>
 
   
@@ -894,7 +987,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 23:30:49" itemprop="dateModified" datetime="2021-06-15T23:30:49+09:00">2021-06-15</time>
+        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
       </span>
 
   
@@ -976,7 +1069,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 23:30:49" itemprop="dateModified" datetime="2021-06-15T23:30:49+09:00">2021-06-15</time>
+        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
       </span>
 
   
@@ -1060,7 +1153,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 23:30:49" itemprop="dateModified" datetime="2021-06-15T23:30:49+09:00">2021-06-15</time>
+        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
       </span>
 
   
@@ -1078,87 +1171,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/02/12/hexo-command/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hideaki10.github.io/2021/02/02/markdon-cheat/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/haomingvince/ghcdn/avatar.jpg">
-      <meta itemprop="name" content="Potesen">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="船長の箱">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/02/markdon-cheat/" class="post-title-link" itemprop="url">markdon-cheat</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-02-02 22:58:31" itemprop="dateCreated datePublished" datetime="2021-02-02T22:58:31+09:00">2021-02-02</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-15 23:30:49" itemprop="dateModified" datetime="2021-06-15T23:30:49+09:00">2021-06-15</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Block-Elements"><a href="#Block-Elements" class="headerlink" title="Block Elements"></a>Block Elements</h1><h2 id="Headers-見出し"><a href="#Headers-見出し" class="headerlink" title="Headers 見出し"></a>Headers 見出し</h2><p>先頭に<code>#</code>をレベルの数だけ記述します。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 見出し1</span><br><span class="line">## 見出し2</span><br><span class="line">### 見出し3</span><br><span class="line">#### 見出し4</span><br><span class="line">##### 見出し5</span><br><span class="line">###### 見出し6</span><br></pre></td></tr></table></figure>
-
-<h1 id="見出し1"><a href="#見出し1" class="headerlink" title="見出し1"></a>見出し1</h1><h2 id="見出し2"><a href="#見出し2" class="headerlink" title="見出し2"></a>見出し2</h2><h3 id="見出し3"><a href="#見出し3" class="headerlink" title="見出し3"></a>見出し3</h3><h4 id="見出し4"><a href="#見出し4" class="headerlink" title="見出し4"></a>見出し4</h4><h5 id="見出し5"><a href="#見出し5" class="headerlink" title="見出し5"></a>見出し5</h5><h6 id="見出し6"><a href="#見出し6" class="headerlink" title="見出し6"></a>見出し6</h6>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/02/markdon-cheat/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
