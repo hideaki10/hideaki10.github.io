@@ -162,6 +162,12 @@
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
@@ -248,8 +254,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Kubernetes/" itemprop="url" rel="index"><span itemprop="name">Kubernetes</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -261,22 +276,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>```<br> vi inventory/mycluster/hosts.yaml<br> 以下のように修正する<br>   master →　node1<br>   worker →　node2,node3</p>
-<p>  vi inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml<br>     適当にサブネットを修正<br>     kube_service_addresses　→　10.200.0.0/16　<br>     kube_pods_subnet　→　10.233.0.0/16</p>
-<pre><code> container-managerを変更
- container_manager →　containerd
-</code></pre>
-<p>  vi ./inventory/mycluster/group_vars/etcd.yml<br>     deployのtypeを変更<br>     etcd_deployment_type →　host(二進数)</p>
-<p>  vi ./inventory/mycluster/group_vars/k8s_cluster/addons.yml</p>
-<pre><code> dashboard を変更
-  dashboard_enabled →　true 
- ingress nginx を変更
- ingress_nginx_enabled →　true
-</code></pre>
-<p>  ansible-playbookを実行したら,no command場合<br>    ~/.bash_profileに以下追加<br>    export PATH=”$PATH”:”/usr/local/bin”</p>
-<pre><code>source ~/.bash_profile
-</code></pre>
-
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">vi inventory/mycluster/hosts.yaml</span><br><span class="line"> 以下のように修正する</span><br><span class="line"> master →　node1</span><br><span class="line"> worker →　node2,node3</span><br><span class="line"></span><br><span class="line">vi inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml</span><br><span class="line">   適当にサブネットを修正</span><br><span class="line">   kube_service_addresses　→　10.200.0.0/16　</span><br><span class="line">   kube_pods_subnet　→　10.233.0.0/16</span><br><span class="line"></span><br><span class="line">   container-managerを変更</span><br><span class="line">   container_manager →　containerd</span><br><span class="line"></span><br><span class="line">vi ./inventory/mycluster/group_vars/etcd.yml</span><br><span class="line">   deployのtypeを変更</span><br><span class="line">   etcd_deployment_type →　host(二進数)</span><br><span class="line">   </span><br><span class="line">vi ./inventory/mycluster/group_vars/k8s_cluster/addons.yml</span><br><span class="line"></span><br><span class="line">   dashboard を変更</span><br><span class="line">    dashboard_enabled →　true </span><br><span class="line">   ingress nginx を変更</span><br><span class="line">   ingress_nginx_enabled →　true</span><br><span class="line"></span><br><span class="line">ansible-playbookを実行したら,no command場合</span><br><span class="line">  ~/.bash_profileに以下追加</span><br><span class="line">  export PATH=&quot;$PATH&quot;:&quot;/usr/local/bin&quot;</span><br><span class="line"></span><br><span class="line">  source ~/.bash_profile</span><br><span class="line"></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/06/17/vagrant-kubespray%E3%81%A7%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%ABkubernetes%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/#more" rel="contents">
@@ -341,7 +341,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
 
   
@@ -427,7 +427,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
 
   
@@ -664,7 +664,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
 
   
@@ -752,7 +752,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
 
   
@@ -831,7 +831,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
 
   
@@ -909,7 +909,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
 
   
@@ -987,7 +987,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
 
   
@@ -1069,7 +1069,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
 
   
@@ -1153,7 +1153,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
 
   

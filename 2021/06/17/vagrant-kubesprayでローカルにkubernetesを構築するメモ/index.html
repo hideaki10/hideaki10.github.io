@@ -21,15 +21,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;hideaki10.github.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;valine&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
-<meta name="description" content="&#96;&#96;&#96; vi inventory&#x2F;mycluster&#x2F;hosts.yaml 以下のように修正する   master →　node1   worker →　node2,node3   vi inventory&#x2F;mycluster&#x2F;group_vars&#x2F;k8s_cluster&#x2F;k8s-cluster.yml     適当にサブネットを修正     kube_service_addresses　→　10">
+<meta name="description" content="123456789101112131415161718192021222324252627282930vi inventory&#x2F;mycluster&#x2F;hosts.yaml 以下のように修正する master →　node1 worker →　node2,node3vi inventory&#x2F;mycluster&#x2F;group_vars&#x2F;k8s_cluster&#x2F;k8s-cluster.yml   適当にサブ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vagrant+kubesprayでローカルにkubernetesを構築するメモ">
 <meta property="og:url" content="https://hideaki10.github.io/2021/06/17/vagrant-kubespray%E3%81%A7%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%ABkubernetes%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B%E3%83%A1%E3%83%A2/index.html">
 <meta property="og:site_name" content="船長の箱">
-<meta property="og:description" content="&#96;&#96;&#96; vi inventory&#x2F;mycluster&#x2F;hosts.yaml 以下のように修正する   master →　node1   worker →　node2,node3   vi inventory&#x2F;mycluster&#x2F;group_vars&#x2F;k8s_cluster&#x2F;k8s-cluster.yml     適当にサブネットを修正     kube_service_addresses　→　10">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930vi inventory&#x2F;mycluster&#x2F;hosts.yaml 以下のように修正する master →　node1 worker →　node2,node3vi inventory&#x2F;mycluster&#x2F;group_vars&#x2F;k8s_cluster&#x2F;k8s-cluster.yml   適当にサブ">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-06-17T13:46:28.000Z">
-<meta property="article:modified_time" content="2021-06-21T14:59:55.620Z">
+<meta property="article:modified_time" content="2021-06-21T15:12:42.028Z">
 <meta property="article:author" content="Potesen">
 <meta property="article:tag" content="Kubernetes">
 <meta name="twitter:card" content="summary">
@@ -167,6 +167,12 @@
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
@@ -254,8 +260,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-21 23:59:55" itemprop="dateModified" datetime="2021-06-21T23:59:55+09:00">2021-06-21</time>
+        <time title="Modified: 2021-06-22 00:12:42" itemprop="dateModified" datetime="2021-06-22T00:12:42+09:00">2021-06-22</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Kubernetes/" itemprop="url" rel="index"><span itemprop="name">Kubernetes</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -267,22 +282,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>```<br> vi inventory/mycluster/hosts.yaml<br> 以下のように修正する<br>   master →　node1<br>   worker →　node2,node3</p>
-<p>  vi inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml<br>     適当にサブネットを修正<br>     kube_service_addresses　→　10.200.0.0/16　<br>     kube_pods_subnet　→　10.233.0.0/16</p>
-<pre><code> container-managerを変更
- container_manager →　containerd
-</code></pre>
-<p>  vi ./inventory/mycluster/group_vars/etcd.yml<br>     deployのtypeを変更<br>     etcd_deployment_type →　host(二進数)</p>
-<p>  vi ./inventory/mycluster/group_vars/k8s_cluster/addons.yml</p>
-<pre><code> dashboard を変更
-  dashboard_enabled →　true 
- ingress nginx を変更
- ingress_nginx_enabled →　true
-</code></pre>
-<p>  ansible-playbookを実行したら,no command場合<br>    ~/.bash_profileに以下追加<br>    export PATH=”$PATH”:”/usr/local/bin”</p>
-<pre><code>source ~/.bash_profile
-</code></pre>
-
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">vi inventory/mycluster/hosts.yaml</span><br><span class="line"> 以下のように修正する</span><br><span class="line"> master →　node1</span><br><span class="line"> worker →　node2,node3</span><br><span class="line"></span><br><span class="line">vi inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml</span><br><span class="line">   適当にサブネットを修正</span><br><span class="line">   kube_service_addresses　→　10.200.0.0/16　</span><br><span class="line">   kube_pods_subnet　→　10.233.0.0/16</span><br><span class="line"></span><br><span class="line">   container-managerを変更</span><br><span class="line">   container_manager →　containerd</span><br><span class="line"></span><br><span class="line">vi ./inventory/mycluster/group_vars/etcd.yml</span><br><span class="line">   deployのtypeを変更</span><br><span class="line">   etcd_deployment_type →　host(二進数)</span><br><span class="line">   </span><br><span class="line">vi ./inventory/mycluster/group_vars/k8s_cluster/addons.yml</span><br><span class="line"></span><br><span class="line">   dashboard を変更</span><br><span class="line">    dashboard_enabled →　true </span><br><span class="line">   ingress nginx を変更</span><br><span class="line">   ingress_nginx_enabled →　true</span><br><span class="line"></span><br><span class="line">ansible-playbookを実行したら,no command場合</span><br><span class="line">  ~/.bash_profileに以下追加</span><br><span class="line">  export PATH=&quot;$PATH&quot;:&quot;/usr/local/bin&quot;</span><br><span class="line"></span><br><span class="line">  source ~/.bash_profile</span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
 
     
