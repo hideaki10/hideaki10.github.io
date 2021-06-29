@@ -251,6 +251,8 @@ tags: aws
      - 移行計画を作成する時
    - AWS DataSync
      - オンプレミスからEFS間にデータ転送
+   - AppSync
+     - アプリリアルタイム
    - AWS DLM
      - Data Lifecycle Manager
      - EBSボリュームスナップショットの定期取得や管理
